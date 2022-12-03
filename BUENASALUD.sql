@@ -40,3 +40,26 @@ LOCK TABLES `departamento` WRITE;
 INSERT INTO `departamento` VALUES (1,'HEMATOLOGIA'),(2,'GINECOLOGIA'),(3,'PEDIATRIA'),(4,'PSIQUIATRIA'),(5,'NEUROLOGIA'),(6,'REHABILITACION'),(7,'CUIDADOS INTENSIVOS'),(8,'UNIDAD DE DIALISIS'),(9,'RADIOLOGIA'),(10,'LABORATORIO'),(11,'TOPICO'),(12,'QUIROFANO'),(13,'MATERNIDAD'),(14,'ODONTOLOGIA'),(15,'FARMACIA'),(16,'UROLOGIA'),(17,'OFTAMOLOGIA'),(18,'URGENCIAS'),(19,'LIMPIEZA'),(20,'SEGURIDAD'),(21,'PRUEBA'),(22,'sala espera'),(23,'servicios higuienicos');
 /*!40000 ALTER TABLE `departamento` ENABLE KEYS */;
 UNLOCK TABLES;
+--
+-- Table structure for table `empleado`
+--
+
+DROP TABLE IF EXISTS `empleado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `empleado` (
+  `emp_no` int NOT NULL AUTO_INCREMENT,
+  `apellido` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `oficio` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `direccion` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  `fecha_alt` date DEFAULT NULL,
+  `salario` double DEFAULT NULL,
+  `comision` double DEFAULT NULL,
+  `dept_no` int DEFAULT NULL,
+  PRIMARY KEY (`emp_no`),
+  KEY `IND_CLIE_CODI` (`emp_no`) USING BTREE,
+  KEY `dept_no` (`dept_no`),
+  CONSTRAINT `empleado_ibfk_1` FOREIGN KEY (`dept_no`) REFERENCES `departamento` (`nro_Departamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=514 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
