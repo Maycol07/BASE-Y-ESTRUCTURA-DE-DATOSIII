@@ -63,3 +63,7 @@ CREATE TABLE `empleado` (
   CONSTRAINT `empleado_ibfk_1` FOREIGN KEY (`dept_no`) REFERENCES `departamento` (`nro_Departamento`)
 ) ENGINE=InnoDB AUTO_INCREMENT=514 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `empleado`
+--
