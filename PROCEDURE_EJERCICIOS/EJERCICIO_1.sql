@@ -22,3 +22,4 @@ BEGIN
     WHERE
         (YEAR(empl.fecha_alt) < '2018');
 END$$
+DELIMITER ;
