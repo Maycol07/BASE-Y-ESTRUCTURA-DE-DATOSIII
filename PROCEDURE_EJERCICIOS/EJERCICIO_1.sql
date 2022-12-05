@@ -1,5 +1,5 @@
 -- EJERCICIO 1
--- Obtener todos los empleados que se dieron de alta antes del año 2018 y que 
+-- Obtener todos los empleados que se dieron de alta antes del aï¿½o 2018 y que 
 -- pertenecen a un determinado departamento. 
 
 USE `db_buena`;
@@ -14,7 +14,7 @@ BEGIN
         `empl`.`apellido` AS `empleado`,
         `empl`.`oficio` AS `oficio`,
         `dept`.`dpt_Nombre` AS `departamento`,
-        YEAR(`empl`.`fecha_alt`) AS año_retiro,
+        YEAR(`empl`.`fecha_alt`) AS aï¿½o_retiro,
         empl.salario AS salario
     FROM
         (empleado empl
